@@ -5,15 +5,15 @@
 		<unit_price>35000</unit_price>
 		<stock>50</stock>
 		<status>1</status>
-	<product no="1"
+	</product>
 
 	<product no="2">
 		<id>20</id>
 		<name> HTC</name>
 		<unit_price>65300</unit_price>
 		<stock>35</stock>
-		<statuas>0</status>
-	<product no="2"
+		<status>0</status>
+	</product>
 
 	<product no="3">
 		<id>23</id>
@@ -21,6 +21,6 @@
 		<unit_price>25100</unit_price>
 		<stock>100</stock>
 		<status>1</status>
-		<product no="3"
-<products>
+	</product>
+</products>
 
