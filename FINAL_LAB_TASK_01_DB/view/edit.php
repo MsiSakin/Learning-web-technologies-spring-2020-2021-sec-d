@@ -2,8 +2,15 @@
 	
 	$title = "Edit Page";
 	include('header.php');
+	
+	$id = $_GET['id'];
+	$username = $_GET['username'];
+	$email = $_GET['email'];
+	$password = $_GET['password'];	
+	
+	
 
-	echo $_GET['id'];
+
 
 ?>
 
@@ -18,28 +25,25 @@
 	</div>
 
 	<div id="main_content">
-		<form method="post" action="">
+		<form method="post" action="../controller/update.php">
 			<fieldset>
 				<legend>Edit User</legend>
 				<table>
 					<tr>
 						<td>Username</td>
-						<td><input type="text" name="username" value="alamin"></td>
+						<td><input type="text" name="username" value="<?php print_r($username)?> "></td>
 					</tr>
-					<tr>
-						<td>Name</td>
-						<td><input type="text" name="name" value="XYZ"></td>
-					</tr>
+					
 					<tr>
 						<td>Email</td>
-						<td><input type="email" name="email" value="abc@gmail.com"></td>
+						<td><input type="email" name="email" value="<?php print_r($email)?>"></td>
 					</tr>
 					<tr>
 						<td>Password</td>
-						<td><input type="password" name="password" value="xyz"></td>
+						<td><input type="text" name="password" value="<?php print_r($password) ?>"></td>
 					</tr>
 					<tr>
-						<td></td>
+						<td><input type="hidden" name="id" value="<?php print_r($id) ?>" ></td>
 						<td>
 							<input type="submit" name="submit" value="Update">
 						</td>

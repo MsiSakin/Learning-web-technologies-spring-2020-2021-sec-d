@@ -21,7 +21,7 @@
 				$_SESSION['username'] = $username;
 				header('location: ../view/home.php');
 			}else{
-				echo "invalid user...";
+				echo "Invalid User...!";
 			}
 		}
 	}

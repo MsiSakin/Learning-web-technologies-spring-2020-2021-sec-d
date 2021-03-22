@@ -22,7 +22,7 @@
 							'password'	=>$password,
 							'type'		=>'user'
 						];
-
+						
 				$status = insertUser($user);
 
 				if($status){

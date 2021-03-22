@@ -5,10 +5,11 @@
 	function validateUser($username, $password){
 		$conn = getConnection();
 		$sql = "select * from users where username='{$username}' and password='{$password}'";
+		//echo $sql;
 		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_assoc($result);
 
-		if(count($row) > 0){
+		if(is_null($row)!=true){
 			return true;
 		}else{
 			return false;
@@ -17,7 +18,7 @@
 
 	function insertUser($user){
 		$conn = getConnection();
-		$sql = "insert into users values('', '{$user['username']}', '{$user['password']}', '{$user['email']}', '{$user['user']}')";
+		$sql = "insert into users values('', '{$user['username']}', '{$user['password']}', '{$user['email']}', '{$user['type']}')";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;
@@ -50,7 +51,7 @@
 
 	function updateUser($user){
 		$conn = getConnection();
-		$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}', type='{$user['user']}' where id={$user['id']}";
+		$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}', type='{$user['type']}' where id={$user['id']}";
 		
 		if(mysqli_query($conn, $sql)){
 			return true;
