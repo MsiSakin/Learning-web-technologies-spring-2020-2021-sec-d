@@ -17,15 +17,15 @@
 
 	function getAllProduct(){
 		$conn = getConnection();
-		$sql = "select * from users";
+		$sql = "select * from products";
 		$result = mysqli_query($conn, $sql);
-		$users = [];
-
+		$products = [];
+		
 		while ($row = mysqli_fetch_assoc($result)) {
-			array_push($users, $row);
+			array_push($products, $row);
 		}
 
-		return $users;
+		return $products;
 	}
 
 	function updateUser($user){

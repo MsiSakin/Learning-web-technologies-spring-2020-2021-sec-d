@@ -14,14 +14,22 @@
 			
 				];
 
-				//print_r($product);
-						
+										
 				$status = insertProduct($product);
 				print_r($status);
-				if($status){
-					header('location: ../view/home.html');
-				}else{
-					echo "Db error";
+				
+				if ($status) {
+					if(isset($_POST['check'])){
+				  	header('location: ../view/product_list.php');
+				  	
+				  	}else{
+				  		
+				  		header('location: ../view/home.html');
+				  	}
+				}									
+				
+				else{
+					echo "DB Error";
 				}
 	}
 
